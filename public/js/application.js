@@ -5,6 +5,13 @@ let text = ''
 const textContainer = document.querySelector('#text-container')
 const synth = window.speechSynthesis
 
+function speak(text) {
+  const message = new SpeechSynthesisUtterance()
+  message.lang = 'ru-RU'
+  message.text = text
+  synth.speak(message)
+}
+
 form.addEventListener('submit', async (e) => {
   e.preventDefault()
   const file = document.getElementById('file').files[0]
@@ -29,15 +36,11 @@ form.addEventListener('submit', async (e) => {
 })
 
 readBtn.addEventListener('click', () => {
-  function speak(text) {
-    const message = new SpeechSynthesisUtterance()
-    message.lang = 'ru-RU'
-    message.text = text
-    synth.speak(message)
-  }
   speak(text)
 })
 
 stopBtn.addEventListener('click', () => {
   synth.cancel()
 })
+
+module.exports = speak
