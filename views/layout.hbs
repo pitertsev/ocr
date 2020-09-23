@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/styles.css">
   <script src="/js/application.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/annyang/1.0.0/annyang.min.js"></script>
+<script>
+if (annyang) {
+let commands = {
+'help': function() {
+  alert("help");
+}};
+annyang.init(commands);
+annyang.start();
+}
+</script>
   <title>Babushka</title>
 </head>
 <body>
