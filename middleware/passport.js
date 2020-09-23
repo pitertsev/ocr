@@ -2,7 +2,7 @@ const passport = require('passport')
 const { Strategy } = require('passport-local')
 const User = require('../models/user')
 
-module.exports = passport.use(new Strategy(
+passport.use(new Strategy(
   (username, password, done) => {
     User.findOne({ login: username }, (err, user) => {
       if (err) {

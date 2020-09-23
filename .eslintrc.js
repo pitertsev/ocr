@@ -13,5 +13,7 @@ module.exports = {
   },
   rules: {
     semi: ['error', 'never'],
+    'global-require': 0,
+    'no-unused-vars': 0,
   },
 }

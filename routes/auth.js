@@ -9,10 +9,9 @@ router.route('/')
     passport.authenticate('local', {
       successRedirect: '/',
       failureRedirect: '/error',
+      failureFlash: true,
+      session: true,
     }),
-    (req, res) => {
-      res.redirect('/')
-    },
   )
 
 module.exports = router
