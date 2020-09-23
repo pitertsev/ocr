@@ -2,10 +2,10 @@
   <form enctype="multipart/form-data" id="send-image" action="/" method="post">
     <div class="row">
       <div class="xl3 offset-xl3 center-align">
-        <input class="waves-effect light-blue darken-2 btn" type="file" id="file" name="file" />
+        <input class="waves-effect light-blue darken-2 btn" type="file" id="file" style="height:60px; width: 380px; padding:12px; font-size:22px;" name="file" />
       </div>
       <div class="xl3 center-align">
-        <button class="waves-effect light-blue darken-2 btn" type="submit" id="start">Узнать что написано</button>
+        <button class="waves-effect light-blue darken-2 btn" type="submit" id="start" style="height:50px; width: 380px; font-size:22px; padding:7px">Узнать что там написано</button>
       </div>
     </div>
   </form>
@@ -15,12 +15,12 @@
 </div>
 <div id="recognized-text">
 </div>
-<div class="row btn-bottom">
-  <div class="col xl1 center-align offset-xl5">
-    <button class="waves-effect light-blue darken-2 btn" id="read-btn">Читай</button>
+<div class="row btn-bottom hide">
+  <div class="col xl2 l3 center-align offset-l3 offset-xl4">
+    <button class="waves-effect light-blue darken-2 btn" id="read-btn" style="height:50px; width: 180px; font-size:22px; padding:7px">Читай</button>
   </div>
-  <div class="col xl1 center-align">
-    <button class="waves-effect light-blue darken-2 btn" id="cancel-read">Стоп</button>
+  <div class="col xl2 l3 center-align">
+    <button class="waves-effect light-blue darken-2 btn" id="cancel-read" style="height:50px; width: 180px; font-size:22px; padding:7px">Стоп</button>
   </div>
 </div>
 <div id="text-container">
