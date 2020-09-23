@@ -8,4 +8,4 @@ userMiddleware(app)
 
 app.use('/', indexRouter)
 
-module.exports = express
+module.exports = app
