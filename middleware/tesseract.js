@@ -7,7 +7,6 @@ async function readImage(file, lang) {
   await worker.loadLanguage(lang)
   await worker.initialize(lang)
   const { data: { text } } = await worker.recognize(file)
-  await worker.terminate()
   return text
 }
 
