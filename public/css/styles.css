@@ -3,7 +3,8 @@
 }
 
 .select-pictures {
-  width: 250px;
+  width: 20%;
+  margin-right: 5%;
 }
 
 #log,
@@ -12,8 +13,9 @@
   border: 1px solid #eee;
 }
 
-#text-container {
-  
+#recognized-text {
+  width: 65%;
+  margin: 40px 0;
 }
 
 
