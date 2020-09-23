@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
     if (img) {
       const text = await readImage(img, 'rus')
       await new Text({ text }).save()
-      res.json({ text })
+      res.json({ text }).end()
     }
   } catch (error) {
     console.log(error)
