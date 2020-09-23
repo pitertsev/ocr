@@ -1,7 +1,11 @@
 const router = require('express').Router()
 
-router.get('/', (req, res) => {
-  res.render('auth')
-})
+router.route('/')
+  .get((req, res) => {
+    res.render('auth')
+  })
+  .post((req, res) => {
+    res.redirect('/')
+  })
 
 module.exports = router
