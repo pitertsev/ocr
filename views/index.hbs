@@ -1,12 +1,13 @@
 <div class="select-pictures">
   <form enctype="multipart/form-data" id="send-image" action="/" method="post">
-    {{!-- <select id="langs">
-      <option value="rus" selected>Русский</option>
-      <option value="eng">English</option>
-    </select> --}}
-
     <input type="file" id="file" name="file"/>
-    {{!-- <div class="image"></div> --}}
     <button type="submit" id="start">Начать обработку</button>
+
   </form>
+</div>
+<div id="recognized-text">
+  <div id="text-container">
+  </div>
+  <button id="read-btn">Читай</button>
+  <button id="cancel-read">Стоп</button>
 </div>
