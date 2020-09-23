@@ -1,5 +1,9 @@
 const form = document.querySelector('#send-image')
-// const imageDiv = document.querySelector('.image')
+const readBtn = document.querySelector('#read-btn')
+const stopBtn = document.querySelector('#cancel-read')
+let text = ''
+const textContainer = document.querySelector('#text-container')
+const synth = window.speechSynthesis
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault()
@@ -16,13 +20,24 @@ form.addEventListener('submit', async (e) => {
     body: data,
   })
 
-  const { text } = await response.json()
+  const answer = await response.json()
+  text = answer.text.split('\n')
+  text.forEach((el) => {
+    textContainer.innerHTML += `${el}<br>`
+  })
+  form.reset()
+})
+
+readBtn.addEventListener('click', () => {
   function speak(text) {
     const message = new SpeechSynthesisUtterance()
     message.lang = 'ru-RU'
     message.text = text
-    window.speechSynthesis.speak(message)
+    synth.speak(message)
   }
-
   speak(text)
+})
+
+stopBtn.addEventListener('click', () => {
+  synth.cancel()
 })
