@@ -36,8 +36,8 @@ form.addEventListener('submit', async (e) => {
   const answer = await response.json()
   progress.classList.add('hide')
   progress.classList.remove('show')
+  bottomBtns.classList.remove('hide')
   bottomBtns.classList.add('show')
-  bottomBtns.classList.remove('show')
 
   text = answer.text.split('\n')
   text.forEach((el) => {
