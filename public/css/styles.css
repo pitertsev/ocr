@@ -1,22 +1,20 @@
-.container {
+/* .container {
   display: flex;
-}
+} */
 
-.select-pictures {
-  width: 20%;
-  margin-right: 5%;
-}
-
-#log,
 #text-container {
-  min-height: 200px; 
+  min-height: 100px; 
   border: 1px solid #eee;
 }
 
-#recognized-text {
-  width: 65%;
-  margin: 40px 0;
+.nav-wrapper {
+  margin: 0 5%;
 }
 
+.hide {
+  display: none;
+}
 
-
+.show {
+  display: block;
+}

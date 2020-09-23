@@ -1,13 +1,25 @@
 <div class="select-pictures">
   <form enctype="multipart/form-data" id="send-image" action="/" method="post">
-    <input type="file" id="file" name="file"/>
-    <button type="submit" id="start">Начать обработку</button>
+    <div class="row left-align">
+      <div class="col"><input class="waves-effect deep-orange darken-4 btn" type="file" id="file" name="file" />
+      </div>
+      <div class="col"><button class="waves-effect deep-orange darken-4 btn" type="submit" id="start">Начать
+          обработку</button></div>
+    </div>
+
+
 
   </form>
 </div>
-<div id="recognized-text">
+<div class="progress deep-orange darken-1 hide">
+  <div class="indeterminate"></div>
+  </div>
+    <div id="recognized-text">
+  </div>
   <div id="text-container">
   </div>
-  <button id="read-btn">Читай</button>
-  <button id="cancel-read">Стоп</button>
+  <div class="row">
+    <button class="waves-effect deep-orange darken-4 btn" id="read-btn">Читай</button>
+    <button class="waves-effect deep-orange darken-4 btn" id="cancel-read">Стоп</button>
+  </div>
 </div>

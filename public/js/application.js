@@ -4,6 +4,7 @@ const stopBtn = document.querySelector('#cancel-read')
 let text = ''
 const textContainer = document.querySelector('#text-container')
 const synth = window.speechSynthesis
+const progress = document.querySelector('.progress');
 
 function speak(text) {
   const message = new SpeechSynthesisUtterance()
@@ -23,12 +24,17 @@ form.addEventListener('submit', async (e) => {
   const data = new FormData()
   data.append('file', file)
 
+  progress.classList.add('show')
+  progress.classList.remove('hide')
+
   const response = await fetch(action, {
     method,
     body: data,
   })
 
   const answer = await response.json()
+  progress.classList.add('hide')
+  progress.classList.remove('show')
   text = answer.text.split('\n')
   text.forEach((el) => {
     textContainer.innerHTML += `${el}<br>`
