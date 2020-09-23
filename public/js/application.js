@@ -14,6 +14,7 @@ function speak(text) {
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault()
+  textContainer.innerHTML = ''
   const file = document.getElementById('file').files[0]
   if (!file) return
 
