@@ -1,3 +1,20 @@
+.container {
+  display: flex;
+}
+
 .select-pictures {
   width: 250px;
 }
+
+#log,
+#text-container {
+  min-height: 200px; 
+  border: 1px solid #eee;
+}
+
+#text-container {
+  
+}
+
+
+

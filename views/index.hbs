@@ -1,12 +1,18 @@
-<div class="select-pictures">
-  <select id="langs">
-    <option value="rus" selected>Русский</option>
-    <option value="eng">English</option>
-  </select>
-  <br><br>
-  <input type="file" id="file" />
-  <br><br>
-  <div id="log" style="min-height: 200px; border: 1px solid #eee"></div>
-  <br><br>
-  <button type="button" id="start">Начать обработку</button>
+<div class="container">
+  <div class="select-pictures">
+    <select id="langs">
+      <option value="rus" selected>Русский</option>
+      <option value="eng">English</option>
+    </select>
+    <br><br>
+    <input type="file" id="file" />
+    <br><br>
+    <div id="log"></div>
+    <br><br>
+    <button type="button" id="start">Начать обработку</button>
+  </div>
+  <div class="recognized-text">
+    <div id="text-container"></div>
+    <button class="read-text-btn">Прочитай</button>
+  </div>
 </div>
