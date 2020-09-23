@@ -6,6 +6,7 @@ module.exports = function (app) {
   const passport = require('passport')
   const FileStore = require('session-file-store')(session)
   const dbConnection = require('./db-connect')
+  const fileUpload = require('express-fileupload')
 
   app.set('view engine', 'hbs')
 
@@ -33,4 +34,5 @@ module.exports = function (app) {
   app.use(passport.initialize())
   app.use(passport.session())
   require('./passport')
+  app.use(fileUpload())
 }

@@ -3,8 +3,8 @@ const Text = require('../models/text.js')
 
 const router = express.Router()
 router.get('/', async (req, res) => {
-  const texts = await Text.find({})
-  res.json(texts)
+  const list = await Text.find({})
+  res.render('list', { list })
 })
 
 module.exports = router

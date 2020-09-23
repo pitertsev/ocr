@@ -1,18 +1,12 @@
-<div class="container">
-  <div class="select-pictures">
-    <select id="langs">
+<div class="select-pictures">
+  <form enctype="multipart/form-data" id="send-image" action="/" method="post">
+    {{!-- <select id="langs">
       <option value="rus" selected>Русский</option>
       <option value="eng">English</option>
-    </select>
-    <br><br>
-    <input type="file" id="file" />
-    <br><br>
-    <div id="log"></div>
-    <br><br>
-    <button type="button" id="start">Начать обработку</button>
-  </div>
-  <div class="recognized-text">
-    <div id="text-container"></div>
-    <button class="read-text-btn">Прочитай</button>
-  </div>
+    </select> --}}
+
+    <input type="file" id="file" name="file"/>
+    {{!-- <div class="image"></div> --}}
+    <button type="submit" id="start">Начать обработку</button>
+  </form>
 </div>

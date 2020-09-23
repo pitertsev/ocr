@@ -119,3 +119,4 @@ dist
 .idea
 # Dependency directory
 bower_components
+*.traineddata
