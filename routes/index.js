@@ -9,7 +9,9 @@ router.get('/', (req, res) => {
 router.post('/', async (req, res) => {
   const img = req.files.file.data // Buffer
   const text = await readImage(img, 'rus')
+
   await new Text({ text }).save()
+
   res.json({ text })
 })
 

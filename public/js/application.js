@@ -11,20 +11,18 @@ form.addEventListener('submit', async (e) => {
   const data = new FormData()
   data.append('file', file)
 
-
   const response = await fetch(action, {
     method,
     body: data,
   })
 
-  // const text = response.text()
+  const { text } = await response.json()
+  function speak(text) {
+    const message = new SpeechSynthesisUtterance()
+    message.lang = 'ru-RU'
+    message.text = text
+    window.speechSynthesis.speak(message)
+  }
+
+  speak(text)
 })
-
-// function speak(text) {
-//   const message = new SpeechSynthesisUtterance()
-//   message.lang = 'ru-RU'
-//   message.text = text
-//   window.speechSynthesis.speak(message)
-// }
-
-// speak('йцуйцуйцфывфсывсывс')
