@@ -1,22 +1,23 @@
-.container {
-  display: flex;
+nav {
+  margin-bottom: 30px;
 }
 
-.select-pictures {
-  width: 20%;
-  margin-right: 5%;
-}
-
-#log,
 #text-container {
-  min-height: 200px; 
-  border: 1px solid #eee;
+  font-size: 22px;
+  min-height: 100px; 
+  border: 3px solid #eee;
+  border-radius: 5px;
 }
 
-#recognized-text {
-  width: 65%;
-  margin: 40px 0;
+.hide {
+  display: none;
 }
 
+.show {
+  display: block;
+}
 
+button {
+  margin-top: 20px;
+}
 
