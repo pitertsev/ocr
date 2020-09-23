@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/css/styles.css">
   <script src="http://cdnjs.cloudflare.com/ajax/libs/annyang/1.0.0/annyang.min.js"></script>
-  <script src="/js/voiceHelp.js"></script>
   <script defer src="/js/application.js"></script>
+  <script defer src="/js/voiceHelp.js"></script>
   <title>BabushkinPomoshnik</title>
 </head>
+
 <body>
-  <nav class="deep-orange darken-1"> 
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo">Babushkin Pomoshnik</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li>{{name}}</li>
-        {{#if name}}
-        <li><a href="/logout">Logout</a></li>
-        {{else}}
-        <li><a href="/auth">Auth</a></li>
-        {{/if}}
-      </ul>
+  <nav class="deep-orange darken-1">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Babushkin Pomoshnik</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>{{name}}</li>
+          {{#if name}}
+          <li><a href="/logout">logout</a></li>
+          <li><a href="/list">list</a></li>
+          {{else}}
+          <li><a href="/auth">Auth</a></li>
+          {{/if}}
+        </ul>
+      </div>
     </div>
   </nav>
-  {{{body}}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <div class="container">
+    {{{body}}}
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
+
 </html>

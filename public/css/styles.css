@@ -1,14 +1,6 @@
-/* .container {
-  display: flex;
-} */
-
 #text-container {
   min-height: 100px; 
   border: 1px solid #eee;
-}
-
-.nav-wrapper {
-  margin: 0 5%;
 }
 
 .hide {
