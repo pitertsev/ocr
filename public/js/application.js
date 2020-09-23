@@ -38,7 +38,6 @@ readBtn.addEventListener('click', () => {
   speak(text)
 })
 
-
 stopBtn.addEventListener('click', () => {
   synth.cancel()
 })
