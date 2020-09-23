@@ -4,7 +4,7 @@ const Text = require('../models/text')
 
 router.route('/')
   .get((req, res) => {
-    res.render('index', { name: req.user.login })
+    res.render('index')
   })
 
 router.route('/error')
