@@ -1,29 +1,28 @@
 <div class="select-pictures">
   <form enctype="multipart/form-data" id="send-image" action="/" method="post">
-    <div class="row left-align">
-      <div class="col"><input class="waves-effect deep-orange darken-4 btn" type="file" id="file" name="file" />
+    <div class="row">
+      <div class="xl3 offset-xl3 center-align">
+        <input class="waves-effect light-blue darken-2 btn" type="file" id="file" name="file" />
       </div>
-      <div class="col"><button class="waves-effect deep-orange darken-4 btn" type="submit" id="start">Начать
-          обработку</button></div>
+      <div class="xl3 center-align">
+        <button class="waves-effect light-blue darken-2 btn" type="submit" id="start">Узнать что написано</button>
+      </div>
     </div>
-
-
-
   </form>
 </div>
-<div class="progress deep-orange darken-1 hide">
+<div class="progress light-blue darken-2 hide">
   <div class="indeterminate"></div>
+</div>
+<div id="recognized-text">
+</div>
+<div class="row btn-bottom">
+  <div class="col xl1 center-align offset-xl5">
+    <button class="waves-effect light-blue darken-2 btn" id="read-btn">Читай</button>
   </div>
-    <div id="recognized-text">
+  <div class="col xl1 center-align">
+    <button class="waves-effect light-blue darken-2 btn" id="cancel-read">Стоп</button>
   </div>
-  <div id="text-container">
-  </div>
-  <div class="row">
-    <div class="col">
-      <button class="waves-effect deep-orange darken-4 btn" id="read-btn">Читай</button>
-    </div>
-    <div class="col">
-      <button class="waves-effect deep-orange darken-4 btn" id="cancel-read">Стоп</button>
-    </div>
-  </div>
+</div>
+<div id="text-container">
+</div>
 </div>

@@ -1,6 +1,12 @@
+nav {
+  margin-bottom: 30px;
+}
+
 #text-container {
+  font-size: 22px;
   min-height: 100px; 
-  border: 1px solid #eee;
+  border: 3px solid #eee;
+  border-radius: 5px;
 }
 
 .hide {
@@ -10,3 +16,8 @@
 .show {
   display: block;
 }
+
+button {
+  margin-top: 20px;
+}
+
