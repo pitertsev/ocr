@@ -43,5 +43,3 @@ readBtn.addEventListener('click', () => {
 stopBtn.addEventListener('click', () => {
   synth.cancel()
 })
-
-module.exports = speak
