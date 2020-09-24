@@ -8,16 +8,54 @@ const bottomBtns = document.querySelector('.btn-bottom')
 const selFile = document.querySelector('#file')
 const startBtn = document.querySelector('#start')
 const img = document.querySelector('.img')
+const voicesSelect = document.querySelector('#voices')
+const sel = document.querySelector('#sel')
 let text = ''
+let voices = []
 
 function speak(text) {
   const message = new SpeechSynthesisUtterance()
   message.lang = 'ru-RU'
   message.text = text
+  console.log(voices[voicesSelect.value])
+  message.voice = voices[voicesSelect.value]
   synth.speak(message)
 }
 
+function generateVoices() {
+  voices = speechSynthesis.getVoices()
+  voices = voices
+    .filter((voice) => voice.lang === 'ru-RU')
+  const voiceList = voices.map((voice, index) => `<option value="${index}">${voice.name} ${voice.lang}</option>`).join('')
+  voicesSelect.innerHTML = `<option value="" disabled selected>Выберите голос</option>${voiceList}`
+  const elems = document.querySelectorAll('select')
+  const instances = M.FormSelect.init(elems)
+}
+
+function hideElement(...elems) {
+  elems.forEach((el) => {
+    el.classList.remove('show')
+    el.classList.add('hide')
+  })
+}
+
+function showElement(...elems) {
+  elems.forEach((el) => {
+    el.classList.remove('hide')
+    el.classList.add('show')
+  })
+}
+
+speechSynthesis.addEventListener('voiceschanged', generateVoices)
+
 selFile.addEventListener('change', (e) => {
+  if (textContainer.classList.contains('show')) {
+    hideElement(bottomBtns, textContainer, sel)
+    // bottomBtns.classList.remove('show')
+    // bottomBtns.classList.add('hide')
+    // textContainer.classList.remove('show')
+    // textContainer.classList.add('hide')
+  }
   img.innerHTML = ''
   startBtn.classList.add('show')
   startBtn.classList.remove('hide')
@@ -42,8 +80,9 @@ form.addEventListener('submit', async (e) => {
   const data = new FormData()
   data.append('file', file)
 
-  progress.classList.add('show')
-  progress.classList.remove('hide')
+  showElement(progress)
+  // progress.classList.remove('hide')
+  // progress.classList.add('show')
 
   const response = await fetch(action, {
     method,
@@ -51,14 +90,14 @@ form.addEventListener('submit', async (e) => {
   })
 
   const answer = await response.json()
-  progress.classList.add('hide')
-  progress.classList.remove('show')
-  bottomBtns.classList.remove('hide')
-  bottomBtns.classList.add('show')
+  hideElement(progress)
+  showElement(bottomBtns, textContainer, sel)
 
   text = answer.text.split('\n')
   text.forEach((el) => {
-    textContainer.innerHTML += `${el}<br>`
+    if (el !== '') {
+      textContainer.innerHTML += `${el}<br>`
+    }
   })
   form.reset()
 })

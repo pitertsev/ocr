@@ -1,29 +1,34 @@
 <div class="wrapper-btns">
-<div class="btns">
-  <div class="select-pictures">
-    <form id="form-file" enctype="multipart/form-data" id="send-image" action="/" method="post">
-      <div class="file-field input-field">
-        <div class="waves-effect file-btn">
-          <span>Выберите файл</span>
-          <input type="file" id="file" name="file">
+  <div class="btns">
+    <div class="select-pictures">
+      <form id="form-file" enctype="multipart/form-data" id="send-image" action="/" method="post">
+        <div class="file-field input-field">
+          <div class="waves-effect file-btn">
+            <span>Выберите файл</span>
+            <input type="file" id="file" name="file">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Файл не выбран">
+          </div>
         </div>
-        <div class="file-path-wrapper">
-          <input class="file-path validate" type="text" placeholder="Файл не выбран">
-        </div>
+        <div class="img"></div>
+        <button class="waves-effect my-btn hide" type="submit" id="start">Узнать что там написано</button>
+      </form>
+    </div>
+    <div id="sel" class="row hide">
+      <div class="input-field col">
+        <select name="voices" id="voices">
+        </select>
       </div>
-      <div class="img"></div>
-      <button class="waves-effect my-btn hide" type="submit" id="start">Узнать что там написано</button>
-    </form>
-  </div>
-  <div class="btn-bottom hide">
-    <button class="waves-effect my-btn" id="read-btn">Читай</button>
-    <button class="waves-effect my-btn" id="cancel-read">Стоп</button>
+    </div>
+    <div class="btn-bottom hide">
+      <button class="waves-effect my-btn" id="read-btn">Читай</button>
+      <button class="waves-effect my-btn" id="cancel-read">Стоп</button>
+    </div>
   </div>
 </div>
-</div>
-
 <div class="progress hide">
   <div class="indeterminate"></div>
 </div>
-<div id="text-container">
+<div id="text-container" class="hide">
 </div>
