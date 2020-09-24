@@ -2,18 +2,18 @@ const router = require('express').Router()
 const sms = require('../middleware/sms')
 
 router.get('/', async (req, res) => {
-  try {
-    await sms.send({
-      to: '89118483609',
-      text: 'Бабушке плохо!',
-      from: 'Бабушка',
-      test: false,
-      translit: false,
-    })
-    res.send('Сообщение отправлено!').end()
-  } catch (err) {
-    res.send('Сообщение не отправлено!').end()
-  }
+  const id = await sms.send({
+    to: '89118483609',
+    text: 'Бабушке плохо!',
+    from: 'GmAssistant',
+    translit: false,
+  }, (err) => {
+    if (err) {
+      console.log(err.message)
+      res.status(404).end()
+    }
+  })
+  res.status(200).end()
 })
 
 module.exports = router
