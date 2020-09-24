@@ -1,32 +1,33 @@
-<div class="wrapper-btns">
-  <div class="btns">
+<div class="row">
+  <div class="col s6 offset-s3">
     <div class="select-pictures">
       <form id="form-file" enctype="multipart/form-data" id="send-image" action="/" method="post">
-        <div class="file-field input-field">
-          <div class="waves-effect file-btn">
+        <div class="file-field input-field row">
+          <div class="waves-effect light-blue darken-2 btn pulse col s4">
             <span>Выберите файл</span>
             <input type="file" id="file" name="file">
           </div>
-          <div class="file-path-wrapper">
+          <div class="file-path-wrapper col s8">
             <input class="file-path validate" type="text" placeholder="Файл не выбран">
           </div>
         </div>
         <div class="img"></div>
-        <button class="waves-effect my-btn hide" type="submit" id="start">Узнать что там написано</button>
+        <button class="waves-effect light-blue darken-2 btn hide my-btn pulse scroll-to" type="submit" id="start">Узнать что там написано</button>
       </form>
     </div>
     <div id="sel" class="row hide">
-      <div class="input-field col">
-        <select name="voices" id="voices">
-        </select>
+      <div class="input-field col s12">
+        <select name="voices" id="voices"></select>
+        <label>Выбор голоса</label>
       </div>
     </div>
-    <div class="btn-bottom hide">
-      <button class="waves-effect my-btn" id="read-btn">Читай</button>
-      <button class="waves-effect my-btn" id="cancel-read">Стоп</button>
+    <div class="btn-bottom hide row">
+      <button class="waves-effect light-blue darken-2 my-btn btn col xl5 pulse" id="read-btn">Читай</button>
+      <button class="waves-effect light-blue darken-2 my-btn btn col xl5 offset-xl2" id="cancel-read">Стоп</button>
     </div>
   </div>
 </div>
+<a class="btn-floating light-blue darken-2 up-btn hide"><i class="material-icons">expand_less</i></a>
 <div class="progress hide">
   <div class="indeterminate"></div>
 </div>
