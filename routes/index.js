@@ -28,7 +28,19 @@ router.post('/', async (req, res) => {
     const img = req.files.file.data
     if (img) {
       const text = await readImage(img, 'rus')
-      await new Text({ text }).save()
+      const dateNow = new Date()
+      const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        weekday: 'long',
+        timezone: 'UTC',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+      }
+      const date = dateNow.toLocaleString('ru', options)
+      await new Text({ text, date }).save()
       res.json({ text }).end()
     }
   } catch (error) {
