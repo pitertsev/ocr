@@ -1,28 +1,29 @@
-<div class="select-pictures">
-  <form enctype="multipart/form-data" id="send-image" action="/" method="post">
-    <div class="row">
-      <div class="xl3 offset-xl3 center-align">
-        <input class="waves-effect light-blue darken-2 btn" type="file" id="file" style="height:60px; width: 380px; padding:12px; font-size:22px;" name="file" />
+<div class="wrapper-btns">
+<div class="btns">
+  <div class="select-pictures">
+    <form id="form-file" enctype="multipart/form-data" id="send-image" action="/" method="post">
+      <div class="file-field input-field">
+        <div class="waves-effect file-btn">
+          <span>Выберите файл</span>
+          <input type="file" id="file" name="file">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Файл не выбран">
+        </div>
       </div>
-      <div class="xl3 center-align">
-        <button class="waves-effect light-blue darken-2 btn" type="submit" id="start" style="height:50px; width: 380px; font-size:22px; padding:7px">Узнать что там написано</button>
-      </div>
-    </div>
-  </form>
+      <div class="img"></div>
+      <button class="waves-effect my-btn hide" type="submit" id="start">Узнать что там написано</button>
+    </form>
+  </div>
+  <div class="btn-bottom hide">
+    <button class="waves-effect my-btn" id="read-btn">Читай</button>
+    <button class="waves-effect my-btn" id="cancel-read">Стоп</button>
+  </div>
 </div>
-<div class="progress light-blue darken-2 hide">
+</div>
+
+<div class="progress hide">
   <div class="indeterminate"></div>
 </div>
-<div id="recognized-text">
-</div>
-<div class="row btn-bottom hide">
-  <div class="col xl2 l3 center-align offset-l3 offset-xl4">
-    <button class="waves-effect light-blue darken-2 btn" id="read-btn" style="height:50px; width: 180px; font-size:22px; padding:7px">Читай</button>
-  </div>
-  <div class="col xl2 l3 center-align">
-    <button class="waves-effect light-blue darken-2 btn" id="cancel-read" style="height:50px; width: 180px; font-size:22px; padding:7px">Стоп</button>
-  </div>
-</div>
 <div id="text-container">
-</div>
 </div>
