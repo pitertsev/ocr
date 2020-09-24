@@ -6,9 +6,14 @@ function help() {
       },
       'Мне плохо': async function () {
         await fetch('/help')
-          .then(speak('Сообщение отправлено'))
-          .catch(speak('Сообщение не отправлено'))
-      },
+          .then(res => {
+            if(res.status === 200){
+            speak('Сообщение отправлено')
+            } else if (res.status === 404){
+              speak('Сообщение не отправлено')
+            }
+          })
+      }
     }
     annyang.init(commands)
     annyang.setLanguage('ru')
