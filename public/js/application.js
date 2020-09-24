@@ -18,6 +18,12 @@ function speak(text) {
 }
 
 selFile.addEventListener('change', (e) => {
+  if (textContainer.classList.contains('show')) {
+    bottomBtns.classList.remove('show')
+    bottomBtns.classList.add('hide')
+    textContainer.classList.remove('show')
+    textContainer.classList.add('hide')
+  }
   img.innerHTML = ''
   startBtn.classList.add('show')
   startBtn.classList.remove('hide')
@@ -55,10 +61,14 @@ form.addEventListener('submit', async (e) => {
   progress.classList.remove('show')
   bottomBtns.classList.remove('hide')
   bottomBtns.classList.add('show')
+  textContainer.classList.remove('hide')
+  textContainer.classList.add('show')
 
   text = answer.text.split('\n')
   text.forEach((el) => {
-    textContainer.innerHTML += `${el}<br>`
+    if (el !== '') {
+      textContainer.innerHTML += `${el}<br>`
+    }
   })
   form.reset()
 })
