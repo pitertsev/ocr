@@ -18,16 +18,67 @@ nav {
   display: block;
 }
 
-button {
-  margin-top: 20px;
-  font-size: 22px;
-}
-
 .text {
   margin-bottom: 20px;
 }
-.flex{
+
+.wrapper-btns {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
+.btns {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 108%;
+}
+
+.my-btn {
+  text-transform: uppercase;
+  margin: 20px;
+  padding: 13px 20px;
+  font-size: 22px;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: #0288d1;
+  border-style: none;
+  width: 100%;
+}
+
+.file-btn {
+  text-transform: uppercase;
+  display: block;
+  padding: 5px 15px;
+  font-size: 20px;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: #0288d1;
+  border-style: none;
+  width: 230px;
+}
+
+.file-field {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#form-file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: inherit;
+}
+
+.file-path-wrapper {
+  width: 60%;
+}
