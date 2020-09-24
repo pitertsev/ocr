@@ -13,6 +13,11 @@ const sel = document.querySelector('#sel')
 let text = ''
 let voices = []
 
+document.addEventListener('DOMContentLoaded', () => {
+  const elems = document.querySelectorAll('.sidenav')
+  const instances = M.Sidenav.init(elems)
+})
+
 function speak(text) {
   const message = new SpeechSynthesisUtterance()
   message.lang = 'ru-RU'
@@ -51,11 +56,8 @@ speechSynthesis.addEventListener('voiceschanged', generateVoices)
 selFile.addEventListener('change', (e) => {
   if (textContainer.classList.contains('show')) {
     hideElement(bottomBtns, textContainer, sel)
-    // bottomBtns.classList.remove('show')
-    // bottomBtns.classList.add('hide')
-    // textContainer.classList.remove('show')
-    // textContainer.classList.add('hide')
   }
+  selFile.parentElement.classList.remove('pulse')
   img.innerHTML = ''
   startBtn.classList.add('show')
   startBtn.classList.remove('hide')
@@ -74,6 +76,8 @@ form.addEventListener('submit', async (e) => {
   textContainer.innerHTML = ''
   const file = document.getElementById('file').files[0]
   if (!file) return
+  const btnU = document.querySelector('.scroll-to')
+  btnU.classList.remove('pulse')
 
   const { method, action } = form
 
@@ -81,8 +85,6 @@ form.addEventListener('submit', async (e) => {
   data.append('file', file)
 
   showElement(progress)
-  // progress.classList.remove('hide')
-  // progress.classList.add('show')
 
   const response = await fetch(action, {
     method,
@@ -92,6 +94,9 @@ form.addEventListener('submit', async (e) => {
   const answer = await response.json()
   hideElement(progress)
   showElement(bottomBtns, textContainer, sel)
+  setTimeout(() => {
+    document.documentElement.scrollTop = btnU.offsetTop + btnU.offsetHeight + 10
+  })
 
   text = answer.text.split('\n')
   text.forEach((el) => {
@@ -102,7 +107,8 @@ form.addEventListener('submit', async (e) => {
   form.reset()
 })
 
-readBtn.addEventListener('click', () => {
+readBtn.addEventListener('click', (e) => {
+  e.target.classList.remove('pulse')
   speak(text)
 })
 

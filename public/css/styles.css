@@ -2,13 +2,17 @@ nav {
   margin-bottom: 30px;
 }
 
+.logot2 {
+  visibility: hidden;
+}
+
 #text-container {
   font-size: 24px;
   min-height: 100px; 
   border: 3px solid #eee;
   border-radius: 5px;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .hide {
@@ -26,7 +30,7 @@ nav {
 .date {
   padding: 5px 10px;
   background-color: #0288d1;
-  border-radius: 5px 5px 0 0;
+  border-radius: 2px 2px 0 0;
   color: white;
 }
 
@@ -34,70 +38,36 @@ nav {
   padding: 10px;
   border: 2px solid #dcdcdc;
   border-top: none;
-  border-radius: 0 0 5px 5px;
-}
-
-.wrapper-btns {
-  display: flex;
-  justify-content: center;
-}
-
-.btns {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  border-radius: 0 0 2px 2px;
 }
 
 .btn-bottom {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 108%;
+  padding: 0 .75rem;
 }
 
 .my-btn {
-  text-transform: uppercase;
-  margin: 20px;
+  margin: 15px 0;
   padding: 13px 20px;
-  font-size: 22px;
-  border-radius: 8px;
-  color: #ffffff;
-  background-color: #0288d1;
-  border-style: none;
-  width: 100%;
-}
-
-.file-btn {
-  text-transform: uppercase;
-  display: block;
-  padding: 5px 15px;
   font-size: 20px;
-  border-radius: 8px;
-  color: #ffffff;
-  background-color: #0288d1;
-  border-style: none;
-  width: 230px;
-}
-
-.file-field {
-  display: flex;
-  align-items: center;
   width: 100%;
+  height: 60px;
 }
 
-#form-file {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: inherit;
+#sel {
+  margin-top: 25px;
+  font-size: 24px;
 }
 
-.file-path-wrapper {
-  width: 60%;
+#voices {
+  font-size: 22px;
 }
 
-.browser-default {
-  display: block;
+@media (max-width: 660px) {
+  .logot {
+    visibility: hidden;
+  }
+
+  .logot2 {
+    visibility: visible;
+  }
 }
