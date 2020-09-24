@@ -62,7 +62,18 @@ nav {
   font-size: 22px;
 }
 
-@media (max-width: 660px) {
+.up-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  opacity: 0.5;
+}
+
+.up-btn:hover {
+  opacity: 1;
+}
+
+@media (max-width: 990px) {
   .logot {
     visibility: hidden;
   }

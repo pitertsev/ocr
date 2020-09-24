@@ -10,6 +10,7 @@ const startBtn = document.querySelector('#start')
 const img = document.querySelector('.img')
 const voicesSelect = document.querySelector('#voices')
 const sel = document.querySelector('#sel')
+const upBtn = document.querySelector('.up-btn')
 let text = ''
 let voices = []
 
@@ -114,4 +115,16 @@ readBtn.addEventListener('click', (e) => {
 
 stopBtn.addEventListener('click', () => {
   synth.cancel()
+})
+
+setInterval(() => {
+  if (document.documentElement.scrollTop > 100) {
+    showElement(upBtn)
+  } else {
+    hideElement(upBtn)
+  }
+})
+
+upBtn.addEventListener('click', () => {
+  document.documentElement.scrollTop = 0
 })
