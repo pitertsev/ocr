@@ -15,12 +15,12 @@
         <button class="waves-effect my-btn hide" type="submit" id="start">Узнать что там написано</button>
       </form>
     </div>
-    <select class="browser-default">
-    <option value="" disabled selected>Выберите голос</option>
-    <option value="1">Option 1</option>
-    <option value="2">Option 2</option>
-    <option value="3">Option 3</option>
-  </select>
+    <div id="sel" class="row hide">
+      <div class="input-field col">
+        <select name="voices" id="voices">
+        </select>
+      </div>
+    </div>
     <div class="btn-bottom hide">
       <button class="waves-effect my-btn" id="read-btn">Читай</button>
       <button class="waves-effect my-btn" id="cancel-read">Стоп</button>

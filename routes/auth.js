@@ -7,7 +7,7 @@ router.route('/')
   })
   .post(
     passport.authenticate('local', {
-      successRedirect: '/',
+      successRedirect: '/list',
       failureRedirect: '/error',
       failureFlash: true,
       session: true,

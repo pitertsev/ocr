@@ -32,9 +32,8 @@ nav {
 
 .text {
   padding: 10px;
-  border: 2px solid #f2f2f2;
+  border: 2px solid #dcdcdc;
   border-top: none;
-  /* background-color: #f2f2f2; */
   border-radius: 0 0 5px 5px;
 }
 
@@ -100,7 +99,5 @@ nav {
 }
 
 .browser-default {
-  border: 3px solid #eee;
-  border-radius: 5px;
-  text-transform: uppercase;
+  display: block;
 }
