@@ -33,7 +33,7 @@ function generateVoices() {
   voices = voices
     .filter((voice) => voice.lang === 'ru-RU')
   const voiceList = voices.map((voice, index) => `<option value="${index}">${voice.name} ${voice.lang}</option>`).join('')
-  voicesSelect.innerHTML = `<option value="" disabled selected>Выберите голос</option>${voiceList}`
+  voicesSelect.innerHTML = voiceList
   const elems = document.querySelectorAll('select')
   const instances = M.FormSelect.init(elems)
 }
