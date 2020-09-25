@@ -60,8 +60,7 @@ selFile.addEventListener('change', (e) => {
   }
   selFile.parentElement.classList.remove('pulse')
   img.innerHTML = ''
-  startBtn.classList.add('show')
-  startBtn.classList.remove('hide')
+  showElement(startBtn)
   const file = e.target.files[0]
   const reader = new FileReader()
   reader.onload = ((f) => function (ev) {
