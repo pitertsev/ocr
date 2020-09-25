@@ -8,11 +8,11 @@ nav {
 
 #text-container {
   font-size: 24px;
-  min-height: 100px; 
+  min-height: 100px;
   border: 3px solid #eee;
   border-radius: 5px;
   padding: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 
 .hide {
@@ -23,8 +23,12 @@ nav {
   display: block;
 }
 
+.list {
+  margin-bottom: 80px;
+}
+
 .list-container {
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 .date {
@@ -65,12 +69,18 @@ nav {
 .up-btn {
   position: fixed;
   right: 20px;
-  bottom: 20px;
+  bottom: 80px;
   opacity: 0.5;
 }
 
 .up-btn:hover {
   opacity: 1;
+}
+
+.page-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 @media (max-width: 990px) {
@@ -84,7 +94,7 @@ nav {
 
   .my-btn {
     font-size: 18px;
-  } 
+  }
 
   #choice-btn {
     font-size: 12px;
