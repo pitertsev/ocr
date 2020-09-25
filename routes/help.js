@@ -3,7 +3,7 @@ const sms = require('../middleware/sms')
 
 router.get('/', async (req, res) => {
   const id = await sms.send({
-    to: '89118483609',
+    to: '79963559095',
     text: 'Бабушке плохо!',
     from: 'GmAssistant',
     translit: false,
