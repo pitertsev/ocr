@@ -81,4 +81,23 @@ nav {
   .logot2 {
     visibility: visible;
   }
+
+  .my-btn {
+    font-size: 18px;
+  } 
+
+  #choice-btn {
+    font-size: 12px;
+  }
+
+  #start {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  #start {
+    font-size: 8px;
+    padding: 5px;
+  }
 }
