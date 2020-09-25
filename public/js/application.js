@@ -23,7 +23,6 @@ function speak(text) {
   const message = new SpeechSynthesisUtterance()
   message.lang = 'ru-RU'
   message.text = text
-  console.log(voices[voicesSelect.value])
   message.voice = voices[voicesSelect.value]
   synth.speak(message)
 }
@@ -32,6 +31,7 @@ function generateVoices() {
   voices = speechSynthesis.getVoices()
   voices = voices
     .filter((voice) => voice.lang === 'ru-RU')
+  voices.pop()
   const voiceList = voices.map((voice, index) => `<option value="${index}">${voice.name} ${voice.lang}</option>`).join('')
   voicesSelect.innerHTML = voiceList
   const elems = document.querySelectorAll('select')
@@ -52,69 +52,79 @@ function showElement(...elems) {
   })
 }
 
-speechSynthesis.addEventListener('voiceschanged', generateVoices)
+if (voicesSelect) {
+  speechSynthesis.addEventListener('voiceschanged', generateVoices)
+}
 
-selFile.addEventListener('change', (e) => {
-  if (textContainer.classList.contains('show')) {
-    hideElement(bottomBtns, textContainer, sel)
-  }
-  selFile.parentElement.classList.remove('pulse')
-  img.innerHTML = ''
-  showElement(startBtn)
-  const file = e.target.files[0]
-  const reader = new FileReader()
-  reader.onload = ((f) => function (ev) {
-    const span = document.createElement('span')
-    span.innerHTML = ['<img class="thumb" title="', escape(f.name), '" src="', ev.target.result, '"style="width:100%"', ' />'].join('')
-    img.insertBefore(span, null)
-  })(file)
-  reader.readAsDataURL(file)
-}, false)
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault()
-  textContainer.innerHTML = ''
-  const file = document.getElementById('file').files[0]
-  if (!file) return
-  const btnU = document.querySelector('.scroll-to')
-  btnU.classList.remove('pulse')
-
-  const { method, action } = form
-
-  const data = new FormData()
-  data.append('file', file)
-
-  showElement(progress)
-
-  const response = await fetch(action, {
-    method,
-    body: data,
-  })
-
-  const answer = await response.json()
-  hideElement(progress)
-  showElement(bottomBtns, textContainer, sel)
-  setTimeout(() => {
-    document.documentElement.scrollTop = btnU.offsetTop + btnU.offsetHeight + 10
-  })
-
-  text = answer.text.split('\n')
-  text.forEach((el) => {
-    if (el !== '') {
-      textContainer.innerHTML += `${el}<br>`
+if (selFile) {
+  selFile.addEventListener('change', (e) => {
+    if (textContainer.classList.contains('show')) {
+      hideElement(bottomBtns, textContainer, sel)
     }
+    selFile.parentElement.classList.remove('pulse')
+    img.innerHTML = ''
+    showElement(startBtn)
+    const file = e.target.files[0]
+    const reader = new FileReader()
+    reader.onload = ((f) => function (ev) {
+      const span = document.createElement('span')
+      span.innerHTML = ['<img class="thumb" title="', escape(f.name), '" src="', ev.target.result, '"style="width:100%"', ' />'].join('')
+      img.insertBefore(span, null)
+    })(file)
+    reader.readAsDataURL(file)
+  }, false)
+}
+
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault()
+    textContainer.innerHTML = ''
+    const file = document.getElementById('file').files[0]
+    if (!file) return
+    const btnU = document.querySelector('.scroll-to')
+    btnU.classList.remove('pulse')
+
+    const { method, action } = form
+
+    const data = new FormData()
+    data.append('file', file)
+
+    showElement(progress)
+
+    const response = await fetch(action, {
+      method,
+      body: data,
+    })
+
+    const answer = await response.json()
+    hideElement(progress)
+    showElement(bottomBtns, textContainer, sel)
+    setTimeout(() => {
+      document.documentElement.scrollTop = btnU.offsetTop + btnU.offsetHeight + 10
+    })
+
+    text = answer.text.split('\n')
+    text.forEach((el) => {
+      if (el !== '') {
+        textContainer.innerHTML += `${el}<br>`
+      }
+    })
+    form.reset()
   })
-  form.reset()
-})
+}
 
-readBtn.addEventListener('click', (e) => {
-  e.target.classList.remove('pulse')
-  speak(text)
-})
+if (readBtn) {
+  readBtn.addEventListener('click', (e) => {
+    e.target.classList.remove('pulse')
+    speak(text)
+  })
+}
 
-stopBtn.addEventListener('click', () => {
-  synth.cancel()
-})
+if (stopBtn) {
+  stopBtn.addEventListener('click', () => {
+    synth.cancel()
+  })
+}
 
 setInterval(() => {
   if (document.documentElement.scrollTop > 100) {

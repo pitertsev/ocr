@@ -6,7 +6,7 @@ const router = express.Router()
 router.get('/', protectRouter, async (req, res) => {
   const list = await Text.find({})
   if (req.user) {
-    res.render('list', { name: req.user.login, list })
+    res.render('list', { name: req.user.login, list: list.reverse() })
   } else {
     res.render('list', { name: null, list })
   }

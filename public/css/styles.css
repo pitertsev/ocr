@@ -58,7 +58,6 @@ nav {
 }
 
 #sel {
-  margin-top: 25px;
   font-size: 24px;
 }
 
@@ -84,6 +83,18 @@ nav {
   z-index: 99;
 }
 
+#start {
+  margin-bottom: 45px;
+}
+
+.progress {
+  margin-bottom: 70px;
+}
+
+.conteiner-foot {
+  margin-bottom: 0;
+}
+
 @media (max-width: 990px) {
   .logot {
     visibility: hidden;
@@ -106,7 +117,7 @@ nav {
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 600px) {
   #start span {
     display: none;
   }
@@ -119,5 +130,17 @@ nav {
 
   #log2 {
     font-size: 18px;
+  }
+
+  .conteiner-foot {
+    margin-bottom: 0;
+  }
+
+  .elb {
+    text-align: center;
+  }
+
+  .up-btn {
+    bottom: 100px;
   }
 }
