@@ -81,6 +81,7 @@ nav {
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 99;
 }
 
 @media (max-width: 990px) {
@@ -105,9 +106,25 @@ nav {
   }
 }
 
-@media (max-width: 500px) {
-  #start {
+@media (max-width: 560px) {
+  #start span {
+    display: none;
+  }
+
+  #start:after {
+    content: 'Узнать что там';
+    font-size: 12px;
+    padding: 0 3px;
+  }
+
+  #log2 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  #start:after {
     font-size: 8px;
-    padding: 5px;
+    padding: 0;
   }
 }
