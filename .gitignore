@@ -120,3 +120,5 @@ dist
 # Dependency directory
 bower_components
 *.traineddata
+
+.DS_Store
